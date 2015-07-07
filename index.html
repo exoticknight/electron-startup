@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Startup Application</title>
+    <link rel="stylesheet" href="static/css/font.css">
+    <link rel="stylesheet" href="static/css/app.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1 class="title text-dark-grey">Hello Electron</h1>
+    <button id="ping-button">ping the main process</button>
+    <button id="hitokoto-button">一言</button>
+    <button id="dev-button">open devtools</button>
+    <br>
+    <p id="res" class="text-dark-grey"></p>
+</div>
+<p id="hitokoto"></p>
+<!-- nodejs lib, run in render process -->
+<script>
+require( './lib/app.js' );
+</script>
+
+<!-- javascript lib -->
+<script>
+window.$ = window.jQuery = require( './static/js/jquery.min.js' );
+</script>
+
+<!-- custom javascript -->
+<script src="static/js/bundle.js"></script>
+
+</body>
+</html>
